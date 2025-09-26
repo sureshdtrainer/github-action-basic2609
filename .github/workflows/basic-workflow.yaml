@@ -1,6 +1,10 @@
 name: Basic Workflow
 
-on: push
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   echo-hello:
@@ -15,7 +19,7 @@ jobs:
     steps:
       - name: Failed Step
         run: |
-          echo "It will be Failure!"
-          exit 1
+          echo "It will be Success!"
+          exit 0
       - name: Echo Goodbye
         run: echo "Goodbye, World!"
